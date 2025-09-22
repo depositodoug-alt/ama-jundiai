@@ -1,0 +1,89 @@
+
+:root{
+  --bg:#f7fbff;
+  --primary:#4da6ff;
+  --accent:#bfe6ff;
+  --text:#083042;
+  --muted:#6b7b85;
+  --radius:12px;
+  --container:1100px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin:0; color:var(--text); background:var(--bg); -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale; line-height:1.5;
+}
+
+/* layout */
+.container{max-width:var(--container); margin:0 auto; padding:24px;}
+.section{padding:48px 0}
+
+/* top nav / hero */
+.topnav{display:flex; justify-content:space-between; align-items:center; padding:18px 24px; position:relative; z-index:10;}
+.topnav a{margin-right:16px; text-decoration:none; color:var(--text); font-weight:600}
+.topnav .brand{font-weight:700; color:var(--primary)}
+
+.menu-toggle{display:none; background:none; border:none; font-size:20px; cursor:pointer}
+
+.hero{background:linear-gradient(180deg, white 0%, var(--accent) 100%); padding:36px 0 80px; position:relative; overflow:hidden;}
+.hero-inner{max-width:var(--container); margin:0 auto; padding:24px; display:flex; align-items:center; justify-content:center; position:relative;}
+.hero-content{max-width:760px; text-align:center; padding:24px;}
+.logo{max-width:160px; margin:0 auto 16px; display:block; filter:drop-shadow(0 6px 18px rgba(20,90,160,0.08));}
+.hero h1{margin:6px 0 12px; font-size:clamp(20px,4.5vw,36px); color:var(--primary)}
+.lead{color:var(--muted); margin-bottom:18px}
+
+/* decorative SVG background */
+.puzzle-bg{position:absolute; left:0; right:0; bottom:0; width:100%; height:120px; opacity:0.12; pointer-events:none;}
+
+/* buttons */
+.btn{display:inline-block; padding:10px 16px; border-radius:999px; text-decoration:none; font-weight:700; border:2px solid transparent; transition:all .18s ease}
+.btn.primary{background:var(--primary); color:white}
+.btn.outline{background:transparent; color:var(--primary); border-color:var(--primary)}
+.btn.small{padding:6px 10px; font-size:14px}
+
+/* About */
+.about p{font-size:1.05rem; color:var(--text)}
+
+/* two-col layout for history */
+.two-col{display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap}
+.two-col > div{flex:1 1 320px}
+
+/* bullets */
+.bullets{list-style:none; padding:0; margin:12px 0 18px}
+.bullets li{padding:8px 0; position:relative; padding-left:28px}
+.bullets li:before{content:'🧩'; position:absolute; left:0; top:0}
+
+/* gallery grid */
+.gallery-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:18px}
+.gallery-grid img{width:100%; height:180px; object-fit:cover; border-radius:10px; cursor:pointer; transition:transform .15s ease}
+.gallery-grid img:hover{transform:translateY(-4px)}
+
+/* contact */
+.contact-cards{display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:start}
+.card{background:white; padding:18px; border-radius:var(--radius); box-shadow:0 6px 18px rgba(4,30,45,0.04)}
+.map-placeholder{height:160px; background:linear-gradient(135deg,#f3f9ff,#fff); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--muted)}
+
+/* footer */
+.site-footer{padding:18px 0; text-align:center; color:var(--muted); font-size:14px}
+
+/* lightbox */
+.lightbox{position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(2,6,23,0.6); z-index:9999}
+.lightbox img{max-width:90%; max-height:80%; border-radius:12px; box-shadow:0 18px 48px rgba(0,0,0,0.5)}
+.lb-close{position:absolute; top:22px; right:22px; background:transparent; border:0; color:white; font-size:28px; cursor:pointer}
+
+/* responsive */
+@media (max-width:900px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-cards{grid-template-columns:1fr}
+  .menu-toggle{display:inline-block}
+  .topnav .nav-right a{display:none}
+}
+
+@media (max-width:600px){
+  .gallery-grid img{height:140px}
+  .hero-content{padding:12px}
+  .logo{max-width:120px}
+}
