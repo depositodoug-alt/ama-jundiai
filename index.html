@@ -62,9 +62,31 @@
           <p class="thanks">OBRIGADO A TODOS QUE FAZEM PARTE DA NOSSA HISTÓRIA</p>
         </div>
         <div class="history-photos">
-          <img src="images/ama_jundiai_7.webp" alt="Crianças brincando" />
-          <img src="images/ama_jundiai_8.webp" alt="Equipe AMA" />
-        </div>
+  <img src="images/ama_jundiai_7.webp" alt="Equipe AMA" />
+  <img src="images/ama_jundiai_8.webp" alt="Crianças brincando" />
+</div>
+
+<style>
+.history-photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.history-photos img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Opcional: Ajuste para telas menores */
+@media (max-width: 600px) {
+  .history-photos img {
+    max-width: 100%;
+  }
+}
+</style>
       </div>
     </section>
 
